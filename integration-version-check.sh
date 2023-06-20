@@ -83,7 +83,8 @@ then
           printf "\t${normal}%s ${green}${bold}%s\n" "Available Version:  " "$latest"
         elif [[ $latest = '' ]]
         then
-          printf "\t\t${red}${bold}${italic}%s %s${normal}\n" "$intName" "HAS NO DATA!"
+          printf "${red}${bold}${italic}%s %s${normal}\n" "$intName" "HAS NO UPDATE DATA!"
+          printf "\t${normal}%s ${bold}%s\n" "Installed Version:  " "$current"
         elif [[ "$latest" == "$current" ]]
         then
           printf "${green}${bold}%s\t\t\t${normal}${bold}%s\n" "UP TO DATE" "$intName"
@@ -139,7 +140,7 @@ else
 
   if [[ ${#noData[@]} > 0 ]]
   then
-    printf "\n${bold}${italic}%s\n" "NO DATA:"
+    printf "\n${bold}${italic}%s\n" "NO UPDATE DATA:"
     for i in "${noData[@]}"
     do
       echo $i
